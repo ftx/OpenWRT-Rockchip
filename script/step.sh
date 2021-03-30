@@ -14,6 +14,7 @@ sed -i 's/0/1/g' feeds/packages/utils/irqbalance/files/irqbalance.config
 wget -P package/base-files/files/etc/init.d/ https://github.com/quintus-lab/Openwrt-R2S/raw/master/patches/zzz-adjust_network
 
 #patches
+wget https://raw.githubusercontent.com/friendlyarm/friendlywrt/master-v19.07.1/package/kernel/rtl8812au-ct/patches/001-use-kernel-byteorder.patch
 wget https://github.com/quintus-lab/Openwrt-R2S/raw/master/patches/dnsmasq-add-filter-aaaa-option.patch
 wget https://github.com/quintus-lab/Openwrt-R2S/raw/master/patches/luci-add-filter-aaaa-option.patch
 wget https://github.com/quintus-lab/Openwrt-R2S/raw/master/patches/luci-app-firewall_add_sfe_switch.patch
@@ -23,6 +24,7 @@ wget https://github.com/quintus-lab/Openwrt-R2S/raw/master/patches/900-add-filte
 wget https://github.com/quintus-lab/Openwrt-R2S/raw/master/patches/998-rockchip-enable-i2c0-on-NanoPi-R2S.patch
 wget https://github.com/quintus-lab/Openwrt-R2S/raw/master/patches/991-r8152-Add-module-param-for-customized-LEDs.patch
 
+patch -p1 < ./001-use-kernel-byteorder.patch
 patch -p1 < ./kernel_crypto-add-rk3328-crypto-support.patch
 patch -p1 < ./use_json_object_new_int64.patch
 patch -p1 < ./dnsmasq-add-filter-aaaa-option.patch
