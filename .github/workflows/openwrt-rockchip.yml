@@ -181,3 +181,4 @@ jobs:
           token: ${{ secrets.RELEASES_TOKEN }}
           bodyFile: "body-origin.md"
           artifacts: ./artifact/*.zip,./artifact/*.config,./artifact/*.sha256sum
+
