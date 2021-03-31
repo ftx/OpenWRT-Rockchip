@@ -7,6 +7,9 @@ uci set system.@system[0].timezone=CST-8
 uci set system.@system[0].zonename=Asia/Shanghai
 uci commit system
 
+#IP
+sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
+
 sed -i 's/local ucic = uci.cursor()/local ucic = luci.model.uci.cursor()/g' /usr/share/shadowsocksr/subscribe.lua
 sed -i "s/'cbid.shadowsocksr.'/'widget.cbid.shadowsocksr.'/g" /usr/lib/lua/luci/view/shadowsocksr/ssrurl.htm
 
